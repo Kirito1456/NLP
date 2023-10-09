@@ -1,0 +1,68 @@
+{% extends "sentanalysis/base.html"%}
+{%load static%}
+
+{% block styles%} 
+<!-- Stylesheet for the program -->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock styles%}
+
+{% block content%}
+    <h1>Sentiment Analysis</h1>
+    <div class="container">
+        <form method="post" action="{% url 'predict' %}">
+            {% csrf_token %}
+            <!-- Asks user input -->
+            <label for="sentiment">Enter a sentence for sentiment analysis:</label><br>
+            <textarea type="text" id="sentiment" name="sentiment" required></textarea><br><br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+    </div>
+
+    <!-- Shows result after submitting a sentiment -->
+    {% if result %}
+    <div class="container">
+        <h2 style="font-size: 30px">Result</h2>
+        <div class="card">
+            <!-- Display different emojis based on the sentiment result -->
+            {% if result == "Positive"%}
+                <img src="/static/img/1.jpg" alt="5 Terre" >
+            {% elif result == "Neutral" %}
+                <img src="/static/img/2.jpg" alt="5 Terre" >
+            {% elif result == "Negative" %}
+                <img src="/static/img/3.jpg" alt="5 Terre" >
+            {% endif %}
+            <!-- Display the sentiment result -->
+            <div class="container2">
+                <p>Your statement is feeling {{ result }}</p>
+                <button id="myBtn">Show Predictions</button>
+            </div>
+        </div>
+            
+    </div>
+    {% endif %}
+
+    <!-- Modal-->
+    <div id="myModal" class="modal">
+    {% if predictions %}
+    <div class="container" style="max-width: 800px;">
+        <span class="close">&times;</span>
+        <h2 style="font-size: 30px">Predictions</h2>
+        <div class="prediction-row">
+            <!-- Display predictions and probabilities -->
+            {% for prediction, probability in predictions %}
+            <div class="prediction-card">
+            {{ prediction }}: {{ probability }}
+            <div id="sentimentTotal">
+                <div id="sentimentPercent" style="width: {{ probability }};"></div>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    </div>
+
+    <!-- Include the JavaScript file for modal-->
+    <script src="{% static '/js/script.js' %}" type="text/javascript"></script>
+{% endblock content%} 
+
