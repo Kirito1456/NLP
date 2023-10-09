@@ -1,16 +1,16 @@
-## Natural Language Processing Application with Django
+# Natural Language Processing Application with Django
 
-# Introduction
+## Introduction
   Sentiment analysis, a vital application of Natural Language Processing (NLP), aims to determine the sentiment expressed in text, whether positive, negative, or neutral. With its wide-ranging applications in social media monitoring, customer feedback analysis, and brand reputation management, sentiment analysis plays a crucial role in understanding public opinions and emerging trends. Django, a powerful Python web framework, provides an ideal platform for seamlessly integrating sentiment analysis capabilities into web-based applications.
-  By leveraging Django's versatility and extensive ecosystem, developers can build intelligent and interactive applications that process and analyze natural language input in real-time, delivering accurate sentiment predictions. This integration involves applying NLP techniques to preprocess text data, selecting an appropriate sentiment analysis model capable of multiclass classification and contextual understanding, training the model using labeled data, and integrating it seamlessly into a Django application. The result is a web application that enables real-time sentiment analysis, empowering organizations to gain valuable insights and automate sentiment analysis tasks.
+  By leveraging Django's versatility and extensive ecosystem, developers can build intelligent and interactive applications that process and analyze natural language input in real time, delivering accurate sentiment predictions. This integration involves applying NLP techniques to preprocess text data, selecting an appropriate sentiment analysis model capable of multiclass classification and contextual understanding, training the model using labeled data, and integrating it seamlessly into a Django application. The result is a web application that enables real-time sentiment analysis, empowering organizations to gain valuable insights and automate sentiment analysis tasks.
 
-# Objectives
+## Objectives
   • Apply knowledge in machine learning to develop automation solutions utilizing NLP techniques.
   • Implement the necessary steps involved in building NLP-based applications, including data preprocessing, feature engineering, and model training.
   • Evaluate the performance of the created sentiment analysis model using appropriate metrics to ensure accuracy and effectiveness.
   • Integrate the trained sentiment analysis model seamlessly into a Django application, allowing users to input text and obtain real-time sentiment analysis results (positive, negative, or neutral).
 
-# Instructions
+## Instructions
   1. Preprocess the text data by performing the following steps:
     • Clean the data by removing punctuations and any irrelevant characters.
     • Eliminate stopwords (commonly used words with little contextual meaning).
