@@ -22,7 +22,7 @@ def predict(request):
         form = SentimentIdentifierForm(request.POST)
 
         if form.is_valid():
-            print("here")
+            #print("here")
             sentiment = (form.cleaned_data.get('sentiment'))
 
             # Preprocess the input sentiment using SentanalysisConfig
